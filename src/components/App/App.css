@@ -1,20 +1,20 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-header {
-  background-color: darkgreen;
-  height: 70px;
-  padding: 20px;
-  color: white;
+    background-color: darkgreen;
+    height: 70px;
+    padding: 20px;
+    color: white;
 }
 
 .App-title {
-  font-size: 2em;
+    font-size: 2em;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 table {
