@@ -1,0 +1,1 @@
+export {AddArtist} from './AddArtist';

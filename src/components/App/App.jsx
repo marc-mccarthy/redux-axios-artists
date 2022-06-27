@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios';
 import ArtistList from '../ArtistList/ArtistList';
 import {useSelector, useDispatch} from 'react-redux';
+import AddArtist from '../AddArtist/AddArtist';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
             <h1 className="App-title">Famous Artists</h1>
         </header>
         <p>Welcome to our collection of amazing artists!</p>
+        <AddArtist/>
         <ArtistList refreshArtists={refreshArtists} artistList={artists} />
         </div>
     );
