@@ -37,7 +37,7 @@ git branch base-mode-again
 
 ### Stretch
 
-- [] Implement the delete route on the **server** using `.filter()`.
-- [] Add additional properties to the form.
+- [x] Implement the delete route on the **server** using `.filter()`.
+- [x] Add additional properties to the form.
 - [] Style with Material UI & make the *home* page look spiffy with an image.
 - [] Move the data to a database.

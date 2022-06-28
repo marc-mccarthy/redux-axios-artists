@@ -19,6 +19,8 @@ function ArtistListItem({ refreshArtists, artist }) {
     return (
         <tr>
             <td>{artist.name}</td>
+            <td>{artist.painting}</td>
+            <td>{artist.age}</td>
             <td>
                 <button onClick={deleteArtist}>DELETE</button>
             </td>
