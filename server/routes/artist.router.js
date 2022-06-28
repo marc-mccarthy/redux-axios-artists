@@ -1,36 +1,38 @@
 // artist.router.js
-
 const express = require('express');
+const pool = require('../modules/pool');
 const router = express.Router();
-// Using a array of data on the server, we will eventually
-// move this back into the database.
-const artists = require('../modules/artist.data');
-let nextId = artists.length;
 
+// DELETE an item
 router.delete('/:id', (req, res) => {    
-    // TODO: Use filter to remove the artist
-    // artists = artists.filter(...)
-    console.log(req.params.id)
-    let newArray = artists.filter(artist => artist.id != req.params.id)
-    artists.length = 0;
-    artists.push(...newArray);
-    res.sendStatus(200);
+    let queryString = 'DELETE FROM "artists" WHERE id=$1'
+    let values = [req.params.id];
+    pool.query(queryString, values).then(result => {
+        res.sendStatus(200);
+    }).catch(error => {
+        console.log(error);
+    })
 });
 
-// POST all the books
+// POST all the artists
 router.post('/', (req, res) => {
-    console.log('In artist POST with', req.body);
-    const artistToAdd = req.body;
-    // add an id to the incoming artist
-    artistToAdd.id = nextId;
-    nextId += 1;
-    artists.push(artistToAdd);
-    res.send(201);
+    let queryString = 'INSERT INTO "artists" ("name", "painting", "age") VALUES ($1, $2, $3)';
+    let values = [req.body.name, req.body.painting, req.body.age];
+    pool.query(queryString, values).then(result => {
+        res.sendStatus(200);
+    }).catch(error => {
+        console.log(error);
+    })
 }); // END POST Route
 
-// GET all the books
+// GET all the artists
 router.get('/', (req, res) => {
-    res.send(artists);
+    let queryString = 'SELECT * FROM "artists"'
+    pool.query(queryString).then(result => {
+        res.send(result.rows);
+    }).catch(error => {
+        console.log(error)
+    })
 }); // END GET Route
 
 module.exports = router;
