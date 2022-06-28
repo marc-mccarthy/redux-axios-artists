@@ -9,7 +9,7 @@ function ArtistListItem({ refreshArtists, artist }) {
         url: `/artist/${artist.id}`
         })
         .then((response) => { 
-            refreshArtists() 
+            refreshArtists();
         })
         .catch((error) => {
             console.log('error on delete: ', error)
@@ -18,10 +18,10 @@ function ArtistListItem({ refreshArtists, artist }) {
 
     return (
         <tr>
-        <td>{artist.name}</td>
-        <td>
-            <button onClick={deleteArtist}>DELETE</button>
-        </td>
+            <td>{artist.name}</td>
+            <td>
+                <button onClick={deleteArtist}>DELETE</button>
+            </td>
         </tr>
     );
 }

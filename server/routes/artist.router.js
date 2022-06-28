@@ -10,11 +10,10 @@ let nextId = artists.length;
 router.delete('/:id', (req, res) => {    
     // TODO: Use filter to remove the artist
     // artists = artists.filter(...)
-    console.log(req.params)
-    artists.filter(artist => {
-        return artist.id !== req.params.id;
-    })
-
+    console.log(req.params.id)
+    let newArray = artists.filter(artist => artist.id != req.params.id)
+    artists.length = 0;
+    artists.push(...newArray);
     res.sendStatus(200);
 });
 
@@ -33,7 +32,5 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
     res.send(artists);
 }); // END GET Route
-
-
 
 module.exports = router;
