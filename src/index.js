@@ -29,7 +29,7 @@ const storeInstance = createStore(
 // our entire application
 ReactDOM.render(
     <Provider store={storeInstance}>
-        <App />
+        <App/>
     </Provider>,
     
     document.getElementById('root')

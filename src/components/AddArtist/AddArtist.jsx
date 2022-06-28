@@ -1,13 +1,12 @@
 import axios from 'axios';
 import React, {useState} from 'react';
 
-function AddArtist() {
+function AddArtist(refreshArtists) {
 
     const [artist, setArtist] = useState('');
 
     const enterArtist = (event) => {
         setArtist(event.target.value);
-        console.log(artist);
     }
 
     const checkArtist = () => {
@@ -15,8 +14,8 @@ function AddArtist() {
             alert('Please enter an artist');
         } else {
             axios.post('/artist', {name: artist}).then(response => {
-                console.log(response);
                 setArtist('');
+                refreshArtists.refreshArtists();
             })
         }
     }

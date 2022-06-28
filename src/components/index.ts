@@ -1,1 +1,0 @@
-export {AddArtist} from './AddArtist';

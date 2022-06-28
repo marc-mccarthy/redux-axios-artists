@@ -5,19 +5,19 @@ function ArtistList({ refreshArtists, artistList }) {
 
     return (
         <div>
-        <table>
-            <tbody>
-            {artistList.map((artist) => {
-                return (
-                <ArtistListItem
-                    key={artist.id}
-                    refreshArtists={refreshArtists}
-                    artist={artist}
-                />
-                );
-            })}
-            </tbody>
-        </table>
+            <table>
+                <tbody>
+                {artistList.map((artist) => {
+                    return (
+                    <ArtistListItem
+                        key={artist.id}
+                        refreshArtists={refreshArtists}
+                        artist={artist}
+                    />
+                    );
+                })}
+                </tbody>
+            </table>
         </div>
     );
 }

@@ -1,16 +1,18 @@
 // App.js
-import React, { useState, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
-import ArtistList from '../ArtistList/ArtistList';
+import {Route, HashRouter as Router} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
+import Nav from '../Nav/Nav';
+import AllArtists from '../AllArtists/AllArtists';
 import AddArtist from '../AddArtist/AddArtist';
 
 function App() {
 
     const dispatch = useDispatch();
     const artists = useSelector(store => store.artistReducer)
-        
+
     // get Artists data from server on load
     useEffect(() => {
         console.log('in useEffect');
@@ -27,7 +29,6 @@ function App() {
         }).then(response => {
             // response.data is the array of artists
             console.log(response.data);
-            // TODO - update this to dispatch to Redux
             dispatch({type: 'SEND_ARTISTS', payload: response.data});
         }).catch((error) => {
             console.log('error on GET', error);
@@ -36,15 +37,22 @@ function App() {
 
     return (
         <div className="App">
-        <header className="App-header">
-            <h1 className="App-title">Famous Artists</h1>
-        </header>
-        <p>Welcome to our collection of amazing artists!</p>
-        <AddArtist/>
-        <ArtistList refreshArtists={refreshArtists} artistList={artists} />
+            <header className="App-header">
+                <h1 className="App-title">Famous Artists</h1>
+                <Nav/>
+            </header>
+            <Router>
+                <Route path="/">
+                </Route>
+                <Route path="/addArtist">
+                    <AddArtist refreshArtists={refreshArtists} artists={artists}/>
+                </Route>
+                <Route path="/allArtists">
+                    <AllArtists refreshArtists={refreshArtists} artists={artists}/>
+                </Route>
+            </Router>
         </div>
     );
-
 }
 
 export default App;

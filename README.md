@@ -18,15 +18,15 @@ git branch base-mode
 ```
 
 - [x] Move the client side artists array from local state in `App.js` to the artistReducer.
-- [ ] Create a new component with an add artist form that will POST data to the **server** on submit.
+- [x] Create a new component with an add artist form that will POST data to the **server** on submit.
    > Data sent to the server should be in the format `{name: 'name of artist'}`.
    > The id is added by the database on the server side.
-- [ ] Add a `Router` and navigation to `App.js`.
-   - [ ] Add navigation to the *home* page. (The *home* page should just be the welcome message and nav.)
-   - [ ] Add a client side route for the form, `/addArtist`
-   - [ ] Add a client side route for the list of artist, `/allArtists`
+- [x] Add a `Router` and navigation to `App.js`.
+   - [x] Add navigation to the *home* page. (The *home* page should just be the welcome message and nav.)
+   - [x] Add a client side route for the form, `/addArtist`
+   - [x] Add a client side route for the list of artist, `/allArtists`
 
-**When you're done with these tasks, checkout master and do it all again!**
+**When you're done with these tasks, checkout main and do it all again!**
 
 ```shell
 git checkout main
