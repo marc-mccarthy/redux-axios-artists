@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {Button} from '@mui/material';
 
 function ArtistListItem({ refreshArtists, artist }) {
 
@@ -20,9 +21,9 @@ function ArtistListItem({ refreshArtists, artist }) {
         <tr>
             <td>{artist.name}</td>
             <td>{artist.painting}</td>
-            <td>{artist.age}</td>
+            <td>{artist.age} years old</td>
             <td>
-                <button onClick={deleteArtist}>DELETE</button>
+                <Button variant="outlined" onClick={deleteArtist}>Delete</Button>
             </td>
         </tr>
     );

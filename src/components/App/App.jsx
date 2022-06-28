@@ -7,6 +7,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import Nav from '../Nav/Nav';
 import AllArtists from '../AllArtists/AllArtists';
 import AddArtist from '../AddArtist/AddArtist';
+import Box from '@mui/material/Box';
 
 function App() {
 
@@ -41,6 +42,11 @@ function App() {
                 <h1 className="App-title">Famous Artists</h1>
                 <Nav/>
             </header>
+            <div id="boxDiv">
+                <Box display="flex" justifyContent="center" alignItems="center" margin="20px" sx={{ borderRadius: 5, width: 325, height: 325, backgroundColor: 'green'}}>
+                    <img src="https://yt3.ggpht.com/ytc/AKedOLSRSl8xsTNuQU_f6sg3bHI19gZYUSqLu2I78S90MQ=s900-c-k-c0x00ffffff-no-rj"/>
+                </Box>
+            </div>
             <Router>
                 <Route path="/">
                 </Route>

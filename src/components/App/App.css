@@ -18,12 +18,15 @@
 }
 
 table {
+    text-align: center;
     border-collapse: collapse;
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 8px;
 }
 
@@ -37,12 +40,24 @@ th {
 a {
     font-size: large;
     color: white;
-}
-
-nav a {
     margin: 20px;
 }
 
 input {
     margin: 20px;
+    height: 20px;
+    font-size: medium;
+    border-radius: 5px;
+    width: 200px;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+#boxDiv {
+    display: flex;
+    justify-content: center;
 }

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import {Button} from '@mui/material';
 
 function AddArtist(refreshArtists) {
 
@@ -42,7 +43,7 @@ function AddArtist(refreshArtists) {
             <input value={painting} onChange={enterPainting} type='text' placeholder='Painting Name...'/>
             <input value={age} onChange={enterAge} type='number' placeholder='Age of Painting (years)...'/>
             <div>
-                <button onClick={checkArtist}>Submit</button>
+                <Button variant="contained" onClick={checkArtist}>Submit</Button>
             </div>
         </div>
         
